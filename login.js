@@ -1,4 +1,3 @@
-// 4. Formos submit tipo input elementas turėtų būti išjungtas (disabled) jeigu checkbox elementas nėra pažymėtas.
 
 
 const users = [
