@@ -1,0 +1,125 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.site-wrap {
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-wrap {
+  padding: 50px 50px;
+  box-shadow: 1px 3px 5px 3px rgba(0, 0, 0, 0.3);
+  background-color: rgb(240, 255, 246);
+  margin-bottom: 50px;
+}
+
+.form-inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-range {
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-select {
+  width: 500px;
+}
+
+.form-field input {
+  border-radius: 5px;
+  width: 500px;
+  height: 30px;
+  border-style: none;
+  box-shadow: 1px 2px 3px 2px rgba(0, 0, 0, 0.3);
+}
+
+.students-list {
+  display: flex;
+}
+
+.group {
+  width: 500px;
+}
+
+input[type=submit] {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #50a0fc;
+  background-color: #50a0fc;
+  color: white;
+  font-size: 15px;
+  font-weight: 700;
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+input[type=submit]:hover {
+  cursor: pointer;
+  background-color: white;
+  border-style: solid;
+  border-color: #50a0fc;
+  color: #50a0fc;
+}
+
+.color-red {
+  color: red;
+}
+
+#students-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.student-item {
+  background-color:rgb(236, 236, 236);
+  padding: 10px 20px;
+  box-shadow: 1px 2px 3px 2px rgba(0, 0, 0, 0.3);
+  width: 300px;
+}
+
+.student-item button {
+  padding: 4px 10px;
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #50a0fc;
+  background-color: #50a0fc;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+  margin-right: 5px;
+}
+
+.student-item button:hover {
+  cursor: pointer;
+  background-color: white;
+  border-style: solid;
+  border-color: #50a0fc;
+  color: #50a0fc;
+}
+
+.form-wrap .login-page {
+  display: flex;
+  padding-bottom: 100px;
+}
+
