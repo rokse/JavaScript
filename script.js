@@ -55,7 +55,7 @@ let initialData = [
   }
 ];
 
-// localStorage.setItem('students-data', JSON.stringify(initialData));
+localStorage.setItem('students-data', JSON.stringify(initialData));
 
 let localStorageStudentData = JSON.parse(localStorage.getItem('students-data'));;
 
