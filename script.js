@@ -59,16 +59,17 @@ let initialData = [
 // localStorage.setItem('students-data', JSON.stringify(initialData));
 function createStudentFromLS() {
   let localStorageStudentData = JSON.parse(localStorage.getItem('students-data'));;
-  
-  localStorageStudentData.map(student => {
-    renderStudent(student);
-  });
+   
+  if (localStorageStudentData) {
+    localStorageStudentData.map(student => {
+      renderStudent(student);
+    });
+  };
 };
 
-function studentInfoFormSubmit(student) {
-  let studentForm = document.querySelector('#student-form');
+function studentInfoFormSubmit(form) {
 
-  studentForm.addEventListener('submit', (event) => {
+  form.addEventListener('submit', (event) => {
     event.preventDefault()
     let elements = event.target.elements;
   
@@ -105,10 +106,7 @@ function studentInfoFormSubmit(student) {
       return;
     };
     
-    formDataToLocalStorage(studentForm);
-
-    let isNewStudent = true;
-
+    
     localStorage.removeItem('name');
     localStorage.removeItem('surname');
     localStorage.removeItem('age');
@@ -118,20 +116,24 @@ function studentInfoFormSubmit(student) {
     localStorage.removeItem('feu');
     localStorage.removeItem('interests');
     
-    if (isNewStudent) {
-      let currentLocalStorageData = JSON.parse(localStorage.getItem('students-data'));
-  
-      currentLocalStorageData.push(studentObj);
+   
+    let currentLocalStorageData = JSON.parse(localStorage.getItem('students-data'));
       
-      localStorage.setItem('students-data', JSON.stringify(currentLocalStorageData));
-  
-      studentForm.reset();
-    };
-
-
+    currentLocalStorageData.push(studentObj);
+      
+    localStorage.setItem('students-data', JSON.stringify(currentLocalStorageData));
+      
+    studentForm.reset();
+    
+    
+    
     renderStudent(studentObj);
 
     event.target.reset();
+
+    let studentCreatedText = `Student ${name} ${surname}, was created`;
+  
+    renderAlertMessage('#alert-message', studentCreatedText);
   });
 };
 
@@ -229,9 +231,7 @@ function renderStudent(studentObj) {
   let studentsList = document.getElementById('students-list');
   studentsList.prepend(studentItem);
   
-  let studentCreatedText = `Student ${name} ${surname}, was created`;
-  
-  renderAlertMessage('#alert-message', studentCreatedText);
+
 
 };
 
@@ -309,14 +309,6 @@ function formValidation(event) {
 };
 
 function formDataToLocalStorage(form) {
-  let nameInput = document.getElementById('student-name');
-  let surnameInput = document.getElementById('student-surname');
-  let ageInput = document.getElementById('student-age');
-  let phoneInput = document.getElementById('student-phone');
-  let emailInput = document.getElementById('student-email');
-  let itKnowledgeInput = document.getElementById('student-it-knowledge');
-  let groupInput = document.querySelectorAll('[name="feu"]');
-
   let localName = localStorage.getItem('name');
   let localSurname = localStorage.getItem('surname');
   let localAge = localStorage.getItem('age');
@@ -326,13 +318,13 @@ function formDataToLocalStorage(form) {
   let localGroup = localStorage.getItem('feu');
   let localInterests = JSON.parse(localStorage.getItem('interests'));
 
-  nameInput = form.elements.name;
-  surnameInput = form.elements.surname;
-  ageInput = form.elements.age;
-  phoneInput = form.elements.phone;
-  emailInput = form.elements.email;
-  itKnowledgeInput = form.elements.experience;
-  groupInput = form.elements.feu;
+  let nameInput = form.elements.name;
+  let surnameInput = form.elements.surname;
+  let ageInput = form.elements.age;
+  let phoneInput = form.elements.phone;
+  let emailInput = form.elements.email;
+  let itKnowledgeInput = form.elements.experience;
+  let groupInput = form.elements.feu;
 
   nameInput.value = localName;
   surnameInput.value = localSurname;
@@ -409,10 +401,13 @@ function filterStudents() {
 };
 
 function init() {
+  let studentForm = document.querySelector('#student-form');
+  
   createStudentFromLS();
-  studentInfoFormSubmit();
+  studentInfoFormSubmit(studentForm);
   changeRangeOutput(); 
   filterStudents();
+  formDataToLocalStorage(studentForm);
 };
 
 init();
