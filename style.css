@@ -41,7 +41,21 @@ body {
   width: 500px;
 }
 
-.form-field input {
+.search-wrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.search-wrap form {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  align-items: center;
+}
+
+.form-field input, 
+.inputs {
   border-radius: 5px;
   width: 500px;
   height: 30px;

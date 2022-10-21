@@ -4,125 +4,127 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Forms</title>
-  <link rel="stylesheet" href="./style.css">
+  <title>Beautiful form</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <form id="search-form">
-    <input type="text" name="search" id="search-input">
-    <select name="variations" id="search-variations">
-      <option value="name">Name</option>
-      <option value="surname">Surame</option>
-      <option value="age">Age</option>
-      <option value="it-knowledge">It knowledge</option>
-      <option value="group">Group</option>
-      <option value="interests">Interests</option>
-    </select>
-    <input type="submit" value="Search">
-  </form>
-
-
   <div class="site-wrap">
+    <div class="search-wrap">
+      <form id="search-form">
+        <input type="text" name="search" class="inputs" id="search-input">
+        <select name="variations" class="inputs" id="search-variations">
+          <option value="name">Name</option>
+          <option value="surname">Surame</option>
+          <option value="age">Age</option>
+          <option value="experience">It knowledge</option>
+          <option value="group">Group</option>
+          <option value="interests">Interests</option>
+        </select>
+        <input type="submit" value="Search">
+      </form>
+    </div>
     <div class="form-wrap">
       <form id="student-form" class="form-inputs" novalidate>
-        <div class="form-control form-field">
-          <label for="student-name">Name:</label>
+        <div class="form-field">
+          <label for="name">Name:</label>
           <input type="text" name="name" id="student-name" placeholder="Enter your name" class="required">
         </div>
-        
-        <div class="form-control form-field">
-          <label for="student-surname">Surname:</label>
-          <input type="text" name="surname" id="student-surname" placeholder="Enter your surname" class="required">
-        </div>
-      
-      <div class="form-control form-field">
-      <label for="student-age">Age:</label>
-      <input type="number" name="age" id="student-age" placeholder="Enter your age" class="required">
-    </div>
-    
-    <div class="form-control form-field">
-      <label for="student-phone">Phone:</label>
-      <input type="tel" name="phone" id="student-phone" placeholder="Enter your phone" class="required">
-    </div>
-    
-    <div class="form-control form-field">
-      <label for="student-email">Email:</label>
-      <input type="email" name="email" id="student-email" placeholder="Enter your email" class="required">
-    </div>
-    
-    <div class="form-control form-range">
-      <label for="student-it-knowledge">IT Knowledge:</label>
-      <input type="range" name="it-knowledge" id="student-it-knowledge" min="1" max="10">
-      <output id="it-knowledge-output">5</output>
-    </div>
-    
-    <fieldset>
-      <legend>Pick your group:</legend>
-      
-      <div class="form-control group">
-        <input type="radio" name="group" id="student-group-1" value="feu 1" checked>
-        <label for="student-group-1">FEU 1gr.</label>
-      </div>
-      
-      <div class="form-control">
-        <input type="radio" name="group" id="student-group-2" value="feu 2">
-        <label for="student-group-2">FEU 2gr.</label>
-      </div>
-      
-      <div class="form-control">
-        <input type="radio" name="group" id="student-group-3" value="feu 3">
-        <label for="student-group-3">FEU 3gr.</label>
-      </div>
-      
-      <div class="form-control">
-        <input type="radio" name="group" id="student-group-4" value="feu 4">
-        <label for="student-group-4">FEU 4gr.</label>
-      </div>
-      
-      <div class="form-control">
-        <input type="radio" name="group" id="student-group-5" value="feu 5">
-        <label for="student-group-5">FEU 5gr.</label>
-      </div>
-    </fieldset>
-    
-    <fieldset>
-      <legend>Interests:</legend>
-      
-      <div class="form-control group">
-        <input type="checkbox" name="interest" id="interest1" value="JavaScript">
-        <label for="interest1">JavaScript</label>
-      </div>
-      
-      <div class="form-control">    
-        <input type="checkbox" name="interest" id="interest2" value="C++">
-        <label for="interest2">C++</label>
-      </div>
-      
-      <div class="form-control">
-        <input type="checkbox" name="interest" id="interest3" value="Python">
-        <label for="interest3">Python</label>
-      </div>
-      
-      <div class="form-control">
-        <input type="checkbox" name="interest" id="interest4" value="PHP">
-        <label for="interest4">PHP</label>
-      </div>
-      
-      <div class="form-control">
-        <input type="checkbox" name="interest" id="interest5" value="Node.js">
-        <label for="interest5">Node.js</label>
-      </div>
-    </fieldset>
-    
-    <input type="submit" value="Create Student">
-  </form>
-</div>
-  
-  <span id="alert-message"></span>
-  
-  <div id="students-list"></div>
-</div>
 
-<script src="./script.js"></script>
+        <div class="form-field">
+          <label for="surname">Surname:</label>
+          <input type="text" name="surname" id="student-surname" placeholder="Enter your surname" class="required">       
+        </div>
+
+        <div class="form-field">
+          <label for="age">Age:</label>
+          <input type="number" name="age" id="student-age" placeholder="Enter your age" class="required">  
+        </div>
+        
+        <div class="form-field">
+          <label for="phone">Phone nr.:</label>
+          <input type="tel" name="phone" id="student-phone" placeholder="Enter your phone" class="required">
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email:</label>
+          <input type="email" name="email" id="student-email" placeholder="Enter your email" class="required">         
+        </div>
+
+        <div class="form-range">
+          <label for="IT-knowledge">IT knowledge:</label>
+          <input type="range" name="experience" id="student-it-knowledge" value="1" min="1" max="10">
+          <output id="it-knowledge-output">1</output>   
+        </div>
+
+        <div class="group-select group">
+          <fieldset>
+            <legend>Pick your group:</legend>
+            <div class="form-control">
+              <input type="radio" id="feu1" name="feu" value="feu1" checked>
+              <label for="feu1">Feu1</label>
+            </div>
+
+            <div class="form-control">
+              <input type="radio" id="feu2" name="feu" value="feu2">
+              <label for="feu2">Feu2</label>
+            </div>
+
+            <div class="form-control">
+              <input type="radio" id="feu3" name="feu" value="feu3">
+              <label for="feu3">Feu3</label>
+            </div>
+
+            <div class="form-control">
+              <input type="radio" id="feu4" name="feu" value="feu4">
+              <label for="feu4">Feu4</label>
+            </div>
+            
+            <div class="form-control">
+              <input type="radio" id="feu5" name="feu" value="feu5">
+              <label for="feu5">Feu5</label>         
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="interests-select group">
+          <fieldset>
+            <legend>Interests:</legend>
+            <div class="form-control">
+              <input type="checkbox" name="interest" id="interest1" value="JavaScript">
+              <label for="interest1">JavaScript</label>
+            </div>
+        
+            <div class="form-control">    
+              <input type="checkbox" name="interest" id="interest2" value="C++">
+              <label for="interest2">C++</label>
+            </div>
+        
+            <div class="form-control">
+              <input type="checkbox" name="interest" id="interest3" value="Python">
+              <label for="interest3">Python</label>
+            </div>
+        
+            <div class="form-control">
+              <input type="checkbox" name="interest" id="interest4" value="PHP">
+              <label for="interest4">PHP</label>
+            </div>
+        
+            <div class="form-control">
+              <input type="checkbox" name="interest" id="interest5" value="Node.js">
+              <label for="interest5">Node.js</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <input type="submit" id="submit" value="Create Student">
+      </form>
+      <div id="alert-message">
+      </div>
+    </div>
+    <div id="students-list">
+        
+    </div>
+  </div>
+  <script src="myscript.js"></script>
 </body>
 </html>
